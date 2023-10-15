@@ -1,5 +1,3 @@
-Creating a GitHub repository with a meaningful description and a README is a good practice to make your code more accessible and understandable for other users. Here's an example of a GitHub description and README for your code:
-
 **Repository Name:** CODBOTS_Timer
 
 **Description:** 
