@@ -1,4 +1,4 @@
-#CODBOTS_Timer Library
+# CODBOTS_Timer Library
 
 **Description:** 
 This repository contains a simple Arduino library for managing timers using ESP32 hardware timers. The library allows you to set up timers with callback functions, making it easy to schedule and manage periodic tasks in your ESP32-based projects. This example demonstrates how to use the CODBOTS_Timer library to create a timer that triggers a callback function at regular intervals.
