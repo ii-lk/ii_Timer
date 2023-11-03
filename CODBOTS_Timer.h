@@ -1,30 +1,33 @@
-#include "CODBOTS_Timer.h"
+// CODBOTS_Timer.h
 
-CODBOTS_Timer::CODBOTS_Timer() {
-  active = false;
-}
+#ifndef CODBOTS_TIMER_H
+#define CODBOTS_TIMER_H
 
-void CODBOTS_Timer::start(unsigned long interval, void (*callback)(), bool repeat) {
-  this->interval = interval;
-  this->callback = callback;
-  this->repeat = repeat;
-  previousMillis = millis();
-  active = true;
-}
+#include <Arduino.h>
 
-void CODBOTS_Timer::update() {
-  if (active) {
-    unsigned long currentMillis = millis();
-    if (currentMillis - previousMillis >= interval) {
-      previousMillis = currentMillis;
-      callback();
-      if (!repeat) {
-        stop();
-      }
-    }
-  }
-}
+class Timer {
+public:
+    Timer(unsigned long interval = 0); // Default constructor
 
-void CODBOTS_Timer::stop() {
-  active = false;
-}
+    bool isTime(bool onstart);
+    void reset();
+
+private:
+    unsigned long timerInterval;
+    unsigned long previousMillis;
+};
+
+class CODBOTS_Timer {
+public:
+    CODBOTS_Timer();
+
+    void addTimer(unsigned long interval);
+    bool isTime(int timerId,bool onstart);
+    void reset(int timerId);
+
+private:
+    Timer *timers;
+    int numTimers;
+};
+
+#endif
