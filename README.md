@@ -1,57 +1,86 @@
 # CODBOTS_Timer Library
 
-**Description:** 
-This repository contains a simple Arduino library for managing timers using ESP32 hardware timers. The library allows you to set up timers with callback functions, making it easy to schedule and manage periodic tasks in your ESP32-based projects. This example demonstrates how to use the CODBOTS_Timer library to create a timer that triggers a callback function at regular intervals.
+The CODBOTS_Timer library provides a simple timer class for managing time intervals. It includes a Timer class for individual timers and a CODBOTS_Timer class for managing multiple timers.
 
-**Installation:**
+## Timer Class
 
-1. Clone the repository:
-   ```
-   git clone https://github.com/yourusername/CODBOTS_Timer.git
-   ```
+### Constructor
 
-2. Copy the `CODBOTS_Timer` folder to your Arduino libraries folder.
+```cpp
+Timer(unsigned long interval = 0);
+```
 
-**Usage:**
-1. Include the library in your Arduino sketch:
-   ```cpp
-   #include <CODBOTS_Timer.h>
-   ```
+Creates a timer with the specified time interval (default is 0).
 
-2. Create an instance of the CODBOTS_Timer class and set up a callback function:
-   ```cpp
-   CODBOTS_Timer timer1(0);  // Create a timer using timer 0
-   timer1.setCallback(&loop2, 1000);  // Set the callback function and delay (1000 ms)
-   ```
+### Methods
 
-3. In your Arduino sketch, define your callback function:
-   ```cpp
-   void loop2() {
-     // Your code here...
-   }
-   ```
+- **isTime(bool onstart):**
+  Checks if the specified time interval has elapsed.
+  
+  - *onstart:* If true, the timer starts from the beginning; if false, it continues from the last reset.
+  
+  Returns true if the interval has elapsed, false otherwise.
 
-4. Start the timer:
-   ```cpp
-   timer1.start();
-   ```
+- **reset():**
+  Resets the timer.
 
-**Example:**
+## CODBOTS_Timer Class
 
-The provided example code (`example_timer.ino`) demonstrates how to use the library to create a timer that triggers a callback function at regular intervals. In the example, two functions, `loop()` and `loop2()`, are used to showcase the functionality of the library. The `loop2()` function toggles an LED on and off every second.
+### Constructor
 
-**License:**
+```cpp
+CODBOTS_Timer();
+```
 
-This code is provided under the MIT License. Please refer to the `LICENSE` file for details.
+Creates a CODBOTS_Timer object.
 
-**Contributing:**
+### Methods
 
-If you'd like to contribute to this project, feel free to create a pull request or open an issue to discuss improvements or bug fixes.
+- **addTimer(unsigned long interval):**
+  Adds a new timer with the specified time interval.
 
-**Credits:**
+- **isTime(int timerId, bool onstart):**
+  Checks if the specified timer's interval has elapsed.
+  
+  - *timerId:* The ID of the timer to check.
+  - *onstart:* If true, the timer starts from the beginning; if false, it continues from the last reset.
+  
+  Returns true if the interval has elapsed, false otherwise.
 
-This library is developed and maintained by [Your Name]. If you find it helpful, consider giving it a star or sharing your feedback.
+- **reset(int timerId):**
+  Resets the specified timer.
+```
 
----
+## Installation
 
-In your actual GitHub repository, you would replace `[Your Name]` with your name or your organization's name. You can also add more sections or details as needed, such as "Troubleshooting," "Known Issues," or any other relevant information about your project. Additionally, you should provide a clear setup guide, especially for users who are new to your library.
+1. Download the CODBOTS_Timer library ZIP file.
+2. In the Arduino IDE, go to `Sketch > Include Library > Add .ZIP Library...` and select the downloaded ZIP file.
+
+## Example Usage
+
+```cpp
+#include <CODBOTS_Timer.h>
+
+CODBOTS_Timer myTimers;
+
+void setup() {
+  myTimers.addTimer(1000); // Add a timer with a 1-second interval
+}
+
+void loop() {
+  if (myTimers.isTime(0, false)) {
+    // Do something every second
+  }
+}
+```
+
+This example sets up a timer with a 1-second interval and performs an action when the timer elapses.
+
+Feel free to explore the library and customize it according to your project requirements.
+
+## License
+
+This library is released under the [MIT License](LICENSE).
+```
+
+Replace `<placeholders>` with actual values or modify the content as needed.
