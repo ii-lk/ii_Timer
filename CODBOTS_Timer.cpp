@@ -64,7 +64,7 @@ bool CODBOTS_Timer::isTime(int timerId, bool onstart)
     return false;
 }
 
-void CODBOTS_Timer::setTime(int timerId, lonmg time)
+void CODBOTS_Timer::setTime(int timerId, long time)
 {
     if (timerId >= 0 && timerId < numTimers)
     {
