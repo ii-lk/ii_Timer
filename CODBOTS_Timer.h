@@ -63,7 +63,7 @@ public:
      * @return true if the interval has elapsed, false otherwise.
      */
     bool isTime(int timerId, bool onstart);
-    void setTime(int timerId, lonmg time);
+    void setTime(int timerId, long time);
     /**
      * @brief Resets the specified timer.
      *
