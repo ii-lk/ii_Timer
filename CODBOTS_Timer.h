@@ -25,6 +25,7 @@ public:
      * @return true if the interval has elapsed, false otherwise.
      */
     bool isTime(bool onstart);
+    void setTime(long time);
 
     /**
      * @brief Resets the timer.
@@ -32,7 +33,7 @@ public:
     void reset();
 
 private:
-    unsigned long timerInterval;  ///< Time interval for the timer.
+    long timerInterval;           ///< Time interval for the timer.
     unsigned long previousMillis; ///< Previous millis() value for time tracking.
 };
 
@@ -62,7 +63,7 @@ public:
      * @return true if the interval has elapsed, false otherwise.
      */
     bool isTime(int timerId, bool onstart);
-
+    void setTime(int timerId, lonmg time);
     /**
      * @brief Resets the specified timer.
      *
