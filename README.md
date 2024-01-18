@@ -1,6 +1,6 @@
-# CODBOTS_Timer Library
+# ii_Timer Library
 
-The CODBOTS_Timer library provides a simple timer class for managing time intervals. It includes a Timer class for individual timers and a CODBOTS_Timer class for managing multiple timers.
+The ii_Timer library provides a simple timer class for managing time intervals. It includes a Timer class for individual timers and a ii_Timer class for managing multiple timers.
 
 ## Timer Class
 
@@ -24,15 +24,15 @@ Creates a timer with the specified time interval (default is 0).
 - **reset():**
   Resets the timer.
 
-## CODBOTS_Timer Class
+## ii_Timer Class
 
 ### Constructor
 
 ```cpp
-CODBOTS_Timer();
+ii_Timer();
 ```
 
-Creates a CODBOTS_Timer object.
+Creates a ii_Timer object.
 
 ### Methods
 
@@ -53,15 +53,15 @@ Creates a CODBOTS_Timer object.
 
 ## Installation
 
-1. Download the CODBOTS_Timer library ZIP file.
+1. Download the ii_Timer library ZIP file.
 2. In the Arduino IDE, go to `Sketch > Include Library > Add .ZIP Library...` and select the downloaded ZIP file.
 
 ## Example Usage
 
 ```cpp
-#include <CODBOTS_Timer.h>
+#include <ii_Timer.h>
 
-CODBOTS_Timer myTimers;
+ii_Timer myTimers;
 
 void setup() {
   myTimers.addTimer(1000); // Add a timer with a 1-second interval

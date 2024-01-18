@@ -1,10 +1,10 @@
-#include <CODBOTS_Timer.h>
+#include <ii_Timer.h>
 
 #define TIMER_MOTORS 0
 #define TIMER_LED 1
 #define TIMER_SENSORS 2
 
-CODBOTS_Timer timer;
+ii_Timer timer;
 
 void setup() {
     Serial.begin(115200);

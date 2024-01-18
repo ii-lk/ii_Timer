@@ -1,6 +1,6 @@
-// CODBOTS_Timer.cpp
+// ii_Timer.cpp
 
-#include "CODBOTS_Timer.h"
+#include "ii_Timer.h"
 
 Timer::Timer(unsigned long interval)
 {
@@ -33,13 +33,13 @@ void Timer::reset()
     previousMillis = millis();
 }
 
-CODBOTS_Timer::CODBOTS_Timer()
+ii_Timer::ii_Timer()
 {
     timers = nullptr;
     numTimers = 0;
 }
 
-void CODBOTS_Timer::addTimer(unsigned long interval)
+void ii_Timer::addTimer(unsigned long interval)
 {
     Timer *newTimers = new Timer[numTimers + 1];
 
@@ -55,7 +55,7 @@ void CODBOTS_Timer::addTimer(unsigned long interval)
     numTimers++;
 }
 
-bool CODBOTS_Timer::isTime(int timerId, bool onstart)
+bool ii_Timer::isTime(int timerId, bool onstart)
 {
     if (timerId >= 0 && timerId < numTimers)
     {
@@ -64,7 +64,7 @@ bool CODBOTS_Timer::isTime(int timerId, bool onstart)
     return false;
 }
 
-void CODBOTS_Timer::setTime(int timerId, long time)
+void ii_Timer::setTime(int timerId, long time)
 {
     if (timerId >= 0 && timerId < numTimers)
     {
@@ -72,7 +72,7 @@ void CODBOTS_Timer::setTime(int timerId, long time)
     }
 }
 
-void CODBOTS_Timer::reset(int timerId)
+void ii_Timer::reset(int timerId)
 {
     if (timerId >= 0 && timerId < numTimers)
     {

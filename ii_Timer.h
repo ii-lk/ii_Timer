@@ -1,7 +1,7 @@
-// CODBOTS_Timer.h
+// ii_Timer.h
 
-#ifndef CODBOTS_TIMER_H
-#define CODBOTS_TIMER_H
+#ifndef ii_TIMER_H
+#define ii_TIMER_H
 
 #include <Arduino.h>
 
@@ -40,13 +40,13 @@ private:
 /**
  * @brief Timer manager class to handle multiple timers.
  */
-class CODBOTS_Timer
+class ii_Timer
 {
 public:
     /**
      * @brief Default constructor.
      */
-    CODBOTS_Timer();
+    ii_Timer();
 
     /**
      * @brief Adds a new timer with the specified interval.
