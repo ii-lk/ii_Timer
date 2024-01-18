@@ -54,9 +54,7 @@ void loop() {
     }
 }
 ```
-
-### [Add more examples as needed]
-
+ 
 ## Practical Usage
 - **Robotics**: Manage motor control and sensor readings at different intervals.
 - **Home Automation**: Control lights, temperature sensors, and other home automation tasks on a schedule.
