@@ -39,7 +39,7 @@ ii_Timer::ii_Timer()
     numTimers = 0;
 }
 
-void ii_Timer::addTimer(unsigned long interval)
+void ii_Timer::addTimer(int timerid, unsigned long interval)
 {
     Timer *newTimers = new Timer[numTimers + 1];
 
@@ -54,7 +54,14 @@ void ii_Timer::addTimer(unsigned long interval)
     timers = newTimers;
     numTimers++;
 }
-
+bool ii_Timer::isTime(int timerId)
+{
+    if (timerId >= 0 && timerId < numTimers)
+    {
+        return timers[timerId].isTime(false);
+    }
+    return false;
+}
 bool ii_Timer::isTime(int timerId, bool onstart)
 {
     if (timerId >= 0 && timerId < numTimers)

@@ -53,7 +53,7 @@ public:
      *
      * @param interval The time interval for the timer in milliseconds.
      */
-    void addTimer(unsigned long interval);
+    void addTimer(int timerid, unsigned long interval);
 
     /**
      * @brief Checks if the specified timer's interval has elapsed.
@@ -62,6 +62,7 @@ public:
      * @param onstart If true, the timer starts from the beginning; if false, it continues from the last reset.
      * @return true if the interval has elapsed, false otherwise.
      */
+    bool isTime(int timerId);
     bool isTime(int timerId, bool onstart);
     void setTime(int timerId, long time);
     /**
