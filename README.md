@@ -1,7 +1,3 @@
-To create a `README.md` for your GitHub repository featuring the `ii_Timer.h` library, including examples and practical usage, you can use the following template:
-
----
-
 # ii_Timer Library
 
 ## Overview
